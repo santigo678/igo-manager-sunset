@@ -1,17 +1,45 @@
-# igo_manager
+# igo_manager (app)
 
-A new Flutter project.
+Este directorio contiene la aplicación Flutter usada por el proyecto `igo-manager-sunset`.
 
-## Getting Started
+## Requisitos
 
-This project is a starting point for a Flutter application.
+- Flutter SDK (estable). Recomendado: Flutter 3.7+.
+- Un emulador o dispositivo (Android, iOS, web o escritorio soportado).
 
-A few resources to get you started if this is your first Flutter project:
+## Instalación rápida
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Desde la carpeta `app`:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+flutter run
+```
+
+Ejemplos para dispositivos específicos:
+
+```bash
+flutter run -d chrome
+flutter run -d linux
+flutter run -d windows
+flutter run -d macos
+flutter run -d emulator-5554
+```
+
+## Estructura relevante
+
+- `lib/core/theme/app_theme.dart`: tema global y paleta Sunset.
+- `lib/features/auth/screens`: pantallas de `login`, `register`, `profile` y `splash` (diseño actualizado).
+- `lib/features/home/home_screen.dart`: navegación inferior y contenedor principal.
+- `lib/features/iniciativas` y `lib/features/planes`: lógica funcional existente.
+
+## Notas de diseño
+
+La paleta "Sunset" introduce colores `violet`/`sunset`/`mint` y bordes más redondeados. El flujo y comandos se mantienen iguales al repositorio base; solo cambia la apariencia.
+
+## Desarrollo
+
+- Mantén tus credenciales de Supabase (si las usas) en variables de entorno.
+- Para pruebas rápidas en web usa `flutter run -d chrome`.
+
+Si necesitas que adapte más pantallas o genere assets (iconos, logos) dímelo y lo agrego.
