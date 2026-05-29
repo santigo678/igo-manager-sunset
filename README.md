@@ -1,6 +1,6 @@
 # igo-manager-sunset
 
-Una variante de diseño del repositorio original `ArizzaYF/igo-manager`, con una nueva paleta visual llamada **Sunset** y una interfaz más suave.
+ con una nueva paleta visual llamada **Sunset** y una interfaz más suave.
 
 ## Qué incluye
 
