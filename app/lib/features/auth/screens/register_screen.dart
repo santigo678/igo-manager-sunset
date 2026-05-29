@@ -56,11 +56,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 style: TextStyle(color: AppColors.text2, fontSize: 13)),
               const SizedBox(height: 8),
               Row(children: [
-                Expanded(child: Container(height: 3,
-                  decoration: BoxDecoration(color: AppColors.indigo, borderRadius: BorderRadius.circular(2)))),
-                const SizedBox(width: 6),
-                Expanded(child: Container(height: 3,
-                  decoration: BoxDecoration(color: AppColors.border, borderRadius: BorderRadius.circular(2)))),
+                Expanded(child: Container(height: 4,
+                  decoration: BoxDecoration(color: AppColors.violetL.withOpacity(0.9), borderRadius: BorderRadius.circular(4)))),
+                const SizedBox(width: 8),
+                Expanded(child: Container(height: 4,
+                  decoration: BoxDecoration(color: AppColors.border, borderRadius: BorderRadius.circular(4)))),
               ]),
               const SizedBox(height: 28),
               TextField(
@@ -87,9 +87,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: AppColors.coral.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: AppColors.coral.withOpacity(0.3), width: 0.5),
+                    color: AppColors.sunset.withOpacity(0.08),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: AppColors.sunset.withOpacity(0.28), width: 0.6),
                   ),
                   child: Text(_error!, style: const TextStyle(color: AppColors.coralL, fontSize: 13)),
                 ),
@@ -97,9 +97,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 28),
               ElevatedButton(
                 onPressed: _loading ? null : _register,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.violet,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                  minimumSize: const Size(double.infinity, 52),
+                ),
                 child: _loading
                   ? const SizedBox(height: 20, width: 20,
-                      child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2))
+                      child: CircularProgressIndicator(color: AppColors.mint, strokeWidth: 2))
                   : const Text('Siguiente →'),
               ),
             ],

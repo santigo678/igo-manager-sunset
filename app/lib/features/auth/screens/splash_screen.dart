@@ -39,12 +39,16 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 72,
               height: 72,
               decoration: BoxDecoration(
-                color: AppColors.indigo,
-                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                  colors: [AppColors.violet, AppColors.violetL],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(22),
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.indigo.withOpacity(0.4),
-                    blurRadius: 24,
+                    color: AppColors.violet.withOpacity(0.28),
+                    blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
                 ],
@@ -75,8 +79,9 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             const SizedBox(height: 48),
+            const SizedBox(height: 8),
             const CircularProgressIndicator(
-              color: AppColors.indigo,
+              color: AppColors.mint,
               strokeWidth: 2,
             ),
           ],
