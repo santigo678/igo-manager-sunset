@@ -1,0 +1,40 @@
+name: Generate Launcher Icons
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  generate-icons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+
+      - name: Install dependencies
+        run: |
+          cd app
+          flutter pub get
+
+      - name: Generate launcher icons
+        run: |
+          cd app
+          flutter pub run flutter_launcher_icons:main
+
+      - name: Show generated files
+        run: ls -R app/android/app/src/main/res | head -n 50 || true
+
+      - name: Commit and push icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/android/app/src/main/res || true
+          git add app/ios/Runner/Assets.xcassets/AppIcon.appiconset || true
+          git commit -m "chore(icons): generated launcher icons via workflow" || echo "no changes to commit"
+          git push origin HEAD:main || echo "push failed"
